@@ -2,7 +2,7 @@
 
 > 版本: 1.0.0
 > 日期: 2026-05-22
-> 定位: 融合 OpenClaw Dreams + Hermes Life OS 的升华记忆系统
+> 定位: 融合Hermes Life OS 升华记忆系统
 
 ---
 
@@ -29,9 +29,9 @@
 
 | 基因 | 来自 | 说明 |
 |------|------|------|
-| 三阶段睡眠模型 | OpenClaw | Light → Deep → REM 的精妙设计 |
-| 六大评分信号 | OpenClaw | frequency/relevance/diversity/recency/consolidation/conceptual |
-| 概念标签提取 | OpenClaw | 多语言停用词 + 保护词表 + 脚本分类 |
+| 三阶段睡眠模型 | Hermes| Light → Deep → REM 的精妙设计 |
+| 六大评分信号 | Hermes | frequency/relevance/diversity/recency/consolidation/conceptual |
+| 概念标签提取 | Hermes | 多语言停用词 + 保护词表 + 脚本分类 |
 | 情感记忆schema | Hermes | MOOD/ENERGY/HABIT/GOAL/INSIGHT/WIN/STRUGGLE |
 | 每日节律 | Hermes | 07:00 briefing / 12:00 check-in / 18:00 reflection / 23:00 consolidation |
 | 模式检测规则 | Hermes | Mood dip / Energy pattern / Habit streak / Goal stall / Win pattern |
