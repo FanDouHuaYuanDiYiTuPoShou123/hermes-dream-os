@@ -1,0 +1,136 @@
+# Hermes Dream OS — Cron Job Configuration
+# 位置: D:\hermes\profiles\work\config\dream-os-crons.yaml
+
+# 使用方式: 将此文件内容注册到 Hermes cron job 系统中
+# 或手动创建 cron job
+
+cron_jobs:
+  # ================== Day Mode ==================
+
+  - name: "Dream OS: Morning Briefing"
+    schedule: "0 7 * * *"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py"
+    args: ["briefing"]
+    enabled: true
+    description: "07:00 晨间简报 — 能量预测 + 今日目标 + 一个洞察"
+    skills: ["hermes-dream-os"]
+    deliver: "origin"
+
+  - name: "Dream OS: Midday Energy Check-in"
+    schedule: "0 12 * * *"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py"
+    args: ["checkin"]
+    enabled: false  # 需要主人主动触发
+    description: "12:00 午间检查 — 记录精力水平"
+    skills: ["hermes-dream-os"]
+
+  - name: "Dream OS: Evening Reflection"
+    schedule: "0 18 * * *"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py"
+    args: ["reflection"]
+    enabled: true
+    description: "18:00 晚间反思 — 成就 + 困境 + 模式观察"
+    skills: ["hermes-dream-os"]
+    deliver: "origin"
+
+  - name: "Dream OS: Memory Consolidation"
+    schedule: "0 23 * * *"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py"
+    args: ["consolidate"]
+    enabled: true
+    description: "23:00 记忆整合 — 存储今日模式 + 更新习惯连续"
+    skills: ["hermes-dream-os"]
+
+  # ================== Night Mode ==================
+
+  - name: "Dream OS: Night Light Phase"
+    schedule: "30 23 * * *"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/night-mode.py"
+    args: ["light"]
+    enabled: true
+    description: "23:30 浅睡 — 整理短期记忆，去重"
+    skills: ["hermes-dream-os"]
+
+  - name: "Dream OS: Night Deep Phase"
+    schedule: "0 1 * * *"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/night-mode.py"
+    args: ["deep"]
+    enabled: true
+    description: "01:00 深睡 — 评分晋升到 MEMORY.md"
+    skills: ["hermes-dream-os"]
+
+  - name: "Dream OS: Night REM Phase"
+    schedule: "0 3 * * *"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/night-mode.py"
+    args: ["rem"]
+    enabled: true
+    description: "03:00 REM — 主题提取，Dream Diary"
+    skills: ["hermes-dream-os"]
+
+  # ================== Weekly ==================
+
+  - name: "Dream OS: Weekly Review"
+    schedule: "0 9 * * 1"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py"
+    args: ["weekly-review"]
+    enabled: true
+    description: "周一 09:00 周回顾 — 模式总结 + 下周建议"
+    skills: ["hermes-dream-os"]
+    deliver: "origin"
+
+  # ================== Pattern Detection (ad-hoc) ==================
+
+  - name: "Dream OS: Pattern Scan"
+    schedule: "0 8 * * *"
+    script: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/pattern-detection.py"
+    enabled: false
+    description: "每日模式扫描（可选）"
+    skills: ["hermes-dream-os"]
+
+
+# ================== 工作目录配置 ==================
+# 所有 cron job 默认工作目录
+workspace_default: "D:/hermes/profiles/work"
+
+# ================== 环境变量 ==================
+env:
+  PYTHONPATH: "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS"
+
+
+# ================== 手动命令速查 ==================
+manual_commands:
+  briefing:
+    cmd: 'python "{script}" "{workspace}" briefing'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py" "D:/hermes/profiles/work" briefing'
+
+  checkin:
+    cmd: 'python "{script}" "{workspace}" checkin {level} {productivity}'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py" "D:/hermes/profiles/work" checkin high 8'
+
+  reflection:
+    cmd: 'python "{script}" "{workspace}" reflection'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py" "D:/hermes/profiles/work" reflection'
+
+  win:
+    cmd: 'python "{script}" "{workspace}" win "{description}"'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py" "D:/hermes/profiles/work" win "完成项目X"'
+
+  struggle:
+    cmd: 'python "{script}" "{workspace}" struggle "{description}"'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/day-mode.py" "D:/hermes/profiles/work" struggle "会议太多"'
+
+  night_light:
+    cmd: 'python "{script}" "{workspace}" light'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/night-mode.py" "D:/hermes/profiles/work" light'
+
+  night_deep:
+    cmd: 'python "{script}" "{workspace}" deep'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/night-mode.py" "D:/hermes/profiles/work" deep'
+
+  night_rem:
+    cmd: 'python "{script}" "{workspace}" rem'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/night-mode.py" "D:/hermes/profiles/work" rem'
+
+  patterns:
+    cmd: 'python "{script}" "{workspace}"'
+    example: 'python "D:/clawlibrary/计算机/agent开发/hermes-dream-os/SCRIPTS/pattern-detection.py" "D:/hermes/profiles/work"'

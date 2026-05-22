@@ -1,0 +1,33 @@
+{
+  "name": "hermes-dream-os",
+  "version": "1.0.0",
+  "description": "Hermes Dream OS - 记忆的昼夜节律 | 融合 OpenClaw Dreams + Hermes Life OS",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./scoring": "./src/scoring.js",
+    "./concept-tagging": "./src/concept-tagging.js",
+    "./memory-hub": "./src/memory-hub.js",
+    "./night-mode": "./src/night-mode.js",
+    "./day-mode": "./src/day-mode.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "day-mode": "node src/day-mode.js",
+    "night-mode": "node src/night-mode.js"
+  },
+  "keywords": [
+    "hermes",
+    "dream-os",
+    "memory",
+    "life-os",
+    "openclaw"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}

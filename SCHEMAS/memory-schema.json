@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "description": "Hermes Dream OS Memory Schema",
+
+  "short_term_recall": {
+    "version": 1,
+    "updatedAt": "ISO8601 timestamp",
+    "entries": {
+      "[key]": {
+        "key": "string (unique identifier)",
+        "path": "string (memory/YYYY-MM-DD.md)",
+        "startLine": "number",
+        "endLine": "number",
+        "source": "memory | life-log",
+        "snippet": "string (normalized text)",
+        "type": "recall | insight | habit | goal | mood",
+        "recallCount": "number",
+        "dailyCount": "number",
+        "groundedCount": "number",
+        "totalScore": "number",
+        "maxScore": "number",
+        "firstRecalledAt": "ISO8601",
+        "lastRecalledAt": "ISO8601",
+        "queryHashes": ["string (max 32)"],
+        "recallDays": ["YYYY-MM-DD (max 16)"],
+        "conceptTags": ["string (max 8)"],
+        "claimHash": "string (optional, SHA1 prefix)",
+        "promotedAt": "ISO8601 (optional)",
+        "emotionalContext": "normal | low_mood_day | high_mood_day (optional)",
+        "insightConfidence": "number 0-1 (optional, for insight type)"
+      }
+    }
+  },
+
+  "phase_signals": {
+    "version": 1,
+    "updatedAt": "ISO8601",
+    "entries": {
+      "[key]": {
+        "key": "string",
+        "lightHits": "number (max 9999)",
+        "remHits": "number (max 9999)",
+        "lastLightAt": "ISO8601 (optional)",
+        "lastRemAt": "ISO8601 (optional)"
+      }
+    }
+  },
+
+  "life_log_mood": {
+    "date": "YYYY-MM-DD",
+    "time": "HH:MM",
+    "score": "number (1-10)",
+    "note": "string (optional)",
+    "triggers": ["string"]
+  },
+
+  "life_log_energy": {
+    "date": "YYYY-MM-DD",
+    "time": "HH:MM",
+    "level": "low | medium | high",
+    "context": "string (optional)",
+    "productivity": "number (1-10, optional)"
+  },
+
+  "life_log_habits": {
+    "name": "string",
+    "date": "YYYY-MM-DD",
+    "completed": "boolean",
+    "streak": "number",
+    "note": "string (optional)"
+  },
+
+  "life_log_goals": {
+    "name": "string",
+    "progress": "number (0-1)",
+    "deadline": "YYYY-MM-DD",
+    "lastUpdated": "YYYY-MM-DD",
+    "milestones": [
+      {
+        "title": "string",
+        "done": "boolean",
+        "date": "YYYY-MM-DD | null"
+      }
+    ]
+  },
+
+  "life_log_insights": {
+    "date": "YYYY-MM-DD",
+    "observation": "string",
+    "confidence": "number (0-1)",
+    "patternBased": "boolean",
+    "source": "memory | mood | energy | habit | goal"
+  },
+
+  "life_log_wins": {
+    "date": "YYYY-MM-DD",
+    "description": "string",
+    "category": "string"
+  },
+
+  "life_log_struggles": {
+    "date": "YYYY-MM-DD",
+    "description": "string",
+    "resolved": "boolean"
+  },
+
+  "events": {
+    "type": "memory.recall.recorded | memory.promotion.applied | life.mood.recorded | life.energy.recorded | life.insight.generated | dream.diary.generated",
+    "timestamp": "ISO8601",
+    "query": "string (optional)",
+    "resultCount": "number (optional)",
+    "results": ["object (optional)"],
+    "mood": "object (optional)",
+    "energy": "object (optional)"
+  }
+}
