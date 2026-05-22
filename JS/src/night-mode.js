@@ -1,7 +1,6 @@
 /**
  * Hermes Dream OS - Night Mode (JavaScript)
  * 休眠期处理：Light Phase / Deep Phase / REM Phase
- * 融合 OpenClaw Dreams + Hermes Life OS
  */
 
 import { MemoryHub } from './memory-hub.js';

@@ -1,6 +1,6 @@
 /**
  * Hermes Dream OS - Scoring Module (JavaScript)
- * 7维度评分算法：融合 OpenClaw 核心 + Life OS 增强
+ * 7维度评分算法
  */
 
 // ========== 常量定义 ==========

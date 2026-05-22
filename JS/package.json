@@ -1,7 +1,7 @@
 {
   "name": "hermes-dream-os",
   "version": "1.0.0",
-  "description": "Hermes Dream OS - 记忆的昼夜节律 | 融合 OpenClaw Dreams + Hermes Life OS",
+  "description": "Hermes Dream OS - 适配 Hermes Agent 的个人记忆操作系统",
   "type": "module",
   "main": "src/index.js",
   "exports": {
@@ -22,7 +22,7 @@
     "dream-os",
     "memory",
     "life-os",
-    "openclaw"
+    "hermes"
   ],
   "author": "",
   "license": "MIT",
