@@ -237,7 +237,6 @@ Level 3: 建议 — "考虑到你的模式，建议..."
 ## 项目结构
 
 ```
-hermes-dream-os/
 ├── JS/
 │   ├── package.json
 │   ├── py_dream.py           # Python Wrapper
