@@ -1,8 +1,8 @@
 # Hermes Dream OS
 
-> 记忆的昼夜节律 | Personal Memory OS with Circadian Rhythm
+> 适配 Hermes Agent 的个人记忆操作系统 | Personal Memory OS for Hermes Agent
 
-融合 [OpenClaw Dreams](https://github.com/openclaw/openclaw) + Hermes Life OS 的个人记忆操作系统。
+根据昼夜节律运作的记忆系统，白天收集，夜间整合。
 
 ## 核心特性
 
