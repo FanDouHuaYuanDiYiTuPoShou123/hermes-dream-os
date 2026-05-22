@@ -236,9 +236,6 @@ Level 3: 建议 — "考虑到你的模式，建议..."
 
 ## 配置文件
 
-位置：`D:\hermes\profiles\work\skills\hermes-dream-os\`
-
-```
 hermes-dream-os/
 ├── SKILL.md              # 本文档
 ├── ARCHITECTURE.md        # 详细架构设计
