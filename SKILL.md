@@ -234,49 +234,46 @@ Level 3: 建议 — "考虑到你的模式，建议..."
 
 ---
 
-## 配置文件
-
-位置：`D:\hermes\profiles\work\skills\hermes-dream-os\`
+## 项目结构
 
 ```
 hermes-dream-os/
-├── SKILL.md              # 本文档
-├── ARCHITECTURE.md        # 详细架构设计
-├── SCRIPTS/
-│   ├── memory-hub.py      # 记忆中枢
-│   ├── day-mode.py        # Day Mode
-│   ├── night-mode.py      # Night Mode
-│   ├── scoring.py         # 评分算法
-│   ├── pattern-detection.py # 模式检测
-│   └── concept-tagging.py  # 标签提取
+├── JS/
+│   ├── package.json
+│   ├── py_dream.py           # Python Wrapper
+│   └── src/
+│       ├── scoring.js        # 7维度评分
+│       ├── concept-tagging.js # 多语言标签
+│       ├── memory-hub.js     # 记忆中枢
+│       ├── night-mode.js     # 夜间三阶段
+│       ├── day-mode.js       # 日间操作
+│       └── cli.js            # CLI 统一入口
 └── SCHEMAS/
-    └── memory-schema.json  # 数据模型
+    └── memory-schema.json    # 数据模型
 ```
-
----
 
 ## 使用示例
 
 ### 主人说"今天心情不好"
 
-```python
-hub.record_mood(score=4, note="工作压力大", triggers=["work"])
-hub.record_insight(
-    observation="心情不好时的反思往往更有价值",
-    confidence=0.6,
-    source="mood"
-)
+```javascript
+hub.record_mood(score=4, note="工作压力大", triggers=["work"]);
+hub.record_insight({
+    observation: "心情不好时的反思往往更有价值",
+    confidence: 0.6,
+    source: "mood"
+});
 ```
 
 ### 主人说"完成了项目X的需求分析"
 
-```python
-hub.update_goal("完成项目X", progress=0.3, milestone={
-    "title": "需求分析",
-    "done": True,
-    "date": "2026-05-22"
-})
-hub.record_win("完成了项目X的需求分析", "productivity")
+```javascript
+hub.update_goal("完成项目X", { progress: 0.3, milestone: {
+    title: "需求分析",
+    done: true,
+    date: "2026-05-22"
+}});
+hub.record_win("完成了项目X的需求分析", "productivity");
 ```
 
 ### 主人问"我最近有什么模式"
